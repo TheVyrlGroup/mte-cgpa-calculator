@@ -50,6 +50,8 @@
 <input type="radio" name="reglat" id="reg" value="reg" checked>Regular
 <input type="radio" name="reglat" id="lat" value="lat">Lateral<br><br>  
 
+<h2>SEMESTER 1:</h2>
+
 <form id="Sem1">  
     
   <label for="select_S1C1">CS201:</label>
@@ -122,11 +124,13 @@
 
 <button onclick="sem1()">Calculate</button>
   
-<p id="gpa1"></p>
-
 <button onclick="cgpaCal1()">Calculate CGPA</button>
 
+<p id="gpa1"></p>
+
 <p id="cgpa1"></p>
+
+<h2>SEMESTER 2:</h2>
 
 <form id="Sem2">  
     
@@ -212,11 +216,13 @@
 
 <button onclick="sem2()">Calculate</button>
 
-<p id="gpa2"></p>
-
 <button onclick="cgpaCal2()">Calculate CGPA</button>
 
+<p id="gpa2"></p>
+
 <p id="cgpa2"></p>
+
+<h2>SEMESTER 3:</h2>
 
 <form id="Sem3">  
     
@@ -326,11 +332,13 @@
 
 <button onclick="sem3()">Calculate</button>
 
-<p id="gpa3"></p>
-
 <button onclick="cgpaCal3()">Calculate CGPA</button>
 
+<p id="gpa3"></p>
+
 <p id="cgpa3"></p>
+
+<h2>SEMESTER 4:</h2>
 
 <form id="Sem4">  
     
@@ -449,11 +457,13 @@
 
 <button onclick="sem4()">Calculate</button>
 
-<p id="gpa4"></p>
-
 <button onclick="cgpaCal4()">Calculate CGPA</button>
 
+<p id="gpa4"></p>
+
 <p id="cgpa4"></p>
+
+<h2>SEMESTER 5:</h2>
 
 <form id="Sem5">  
     
@@ -572,12 +582,14 @@
 
 <button onclick="sem5()">Calculate</button>
 
-<p id="gpa5"></p>
-
 <button onclick="cgpaCal5()">Calculate CGPA</button>
 
+<p id="gpa5"></p>
+
 <p id="cgpa5"></p>
-  
+
+<h2>SEMESTER 6:</h2>
+
 <form id="Sem6">  
     
   <label for="select_S6C1">CS239:</label>
@@ -695,11 +707,11 @@
 
 <button onclick="sem6()">Calculate</button>
 
+<button onclick="cgpaCal6()">Calculate CGPA</button>
+
 <p id="gpa6"></p>
 
-<button onclick="cgpaCal()">Calculate CGPA</button>
-
-<p id="cgpa"></p>
+<p id="cgpa6"></p>
 
 <p class="styled-paragraph">by joseph beniel │ 
   <a class="yt" href="https://www.youtube.com/@josephbeniel">yt</a> 
@@ -1019,6 +1031,31 @@ function cgpaCal5(){
     }
     else{
       document.getElementById("cgpa5").innerHTML = " Calculate other GPAs ";
+    }
+  }
+
+}
+
+function cgpaCal6(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
+      den = sem3C+sem4C+sem5C+sem6C;
+      document.getElementById("cgpa6").innerHTML = "6th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa6").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
+      den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C;
+      document.getElementById("cgpa6").innerHTML = "6th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa6").innerHTML = " Calculate other GPAs ";
     }
   }
 
