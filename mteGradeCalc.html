@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Styling for the specific paragraph */
+      .styled-paragraph {
+        font-size: 18px;
+        color: #333333;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin-top: 20px;
+        font-family: 'Arial', sans-serif;
+      }
+      
+      /* Styling for the links */
+      .styled-paragraph a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+      }
+      
+      /* Hover effect for the links */
+      .styled-paragraph a:hover {
+        background-color: #333333;
+      }
+      
+      /* Specific colors for each social media platform */
+      .styled-paragraph a.yt {
+        background-color: #FF0000;
+      }
+      
+      .styled-paragraph a.ig {
+        background-color: #C13584;
+      }
+      
+      .styled-paragraph a.x {
+        background-color: #1DA1F2;
+      }
+      </style>
+  </head>
+<body>
+  
+<input type="radio" name="reglat" id="reg" value="reg" checked>Regular
+<input type="radio" name="reglat" id="lat" value="lat">Lateral<br><br>  
+
+<form id="Sem1">  
+    
+  <label for="select_S1C1">CS201:</label>
+  <select name="select_S1C1" id="select_S1C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S1C2">CS202:</label>
+  <select name="select_S1C2" id="select_S1C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S1C3">EE201:</label>
+  <select name="select_S1C3" id="select_S1C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S1C4">EE202:</label>
+  <select name="select_S1C4" id="select_S1C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S1C5">MA201:</label>
+  <select name="select_S1C5" id="select_S1C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S1C6">ME202:</label>
+  <select name="select_S1C6" id="select_S1C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem1()">Calculate</button>
+  
+<p id="gpa1"></p>
+
+<form id="Sem2">  
+    
+  <label for="select_S2C1">CY201:</label>
+  <select name="select_S2C1" id="select_S2C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C2">CY202:</label>
+  <select name="select_S2C2" id="select_S2C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C3">HS201:</label>
+  <select name="select_S2C3" id="select_S2C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C4">MA202:</label>
+  <select name="select_S2C4" id="select_S2C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C5">ME201:</label>
+  <select name="select_S2C5" id="select_S2C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C6">PH201:</label>
+  <select name="select_S2C6" id="select_S2C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S2C7">PH202:</label>
+  <select name="select_S2C7" id="select_S2C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+  
+
+</form> 
+
+<button onclick="sem2()">Calculate</button>
+
+<p id="gpa2"></p>
+
+<form id="Sem3">  
+    
+  <label for="select_S3C1">EC237:</label>
+  <select name="select_S3C1" id="select_S3C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C2">MT201:</label>
+  <select name="select_S3C2" id="select_S3C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C3">MT202:</label>
+  <select name="select_S3C3" id="select_S3C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C4">MT203:</label>
+  <select name="select_S3C4" id="select_S3C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C5">MA204:</label>
+  <select name="select_S3C5" id="select_S3C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C6">MT204:</label>
+  <select name="select_S3C6" id="select_S3C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C7">MT205:</label>
+  <select name="select_S3C7" id="select_S3C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C8">EC238:</label>
+  <select name="select_S3C8" id="select_S3C8">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S3C9">H/M:</label>
+  <select name="select_S3C9" id="select_S3C9">
+    <option value=-1 selected="selected">nope</option>
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  
+
+</form> 
+
+<button onclick="sem3()">Calculate</button>
+
+<p id="gpa3"></p>
+
+<form id="Sem4">  
+    
+  <label for="select_S4C1">MT221:</label>
+  <select name="select_S4C1" id="select_S4C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C2">SH201:</label>
+  <select name="select_S4C2" id="select_S4C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C3">CS237:</label>
+  <select name="select_S4C3" id="select_S4C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C4">CS236:</label>
+  <select name="select_S4C4" id="select_S4C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C5">MT207:</label>
+  <select name="select_S4C5" id="select_S4C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C6">CS235:</label>
+  <select name="select_S4C6" id="select_S4C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C7">CS234:</label>
+  <select name="select_S4C7" id="select_S4C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C8">EI203:</label>
+  <select name="select_S4C8" id="select_S4C8">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C9">MT206:</label>
+  <select name="select_S4C9" id="select_S4C9">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S4C10">H/M:</label>
+  <select name="select_S4C10" id="select_S4C10">
+    <option value=-1 selected="selected">nope</option>
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem4()">Calculate</button>
+
+<p id="gpa4"></p>
+
+<form id="Sem5">  
+    
+  <label for="select_S5C1">MT208:</label>
+  <select name="select_S5C1" id="select_S5C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C2">MT209:</label>
+  <select name="select_S5C2" id="select_S5C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C3">EE235:</label>
+  <select name="select_S5C3" id="select_S5C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C4">MTY02:</label>
+  <select name="select_S5C4" id="select_S5C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C5">MTY06:</label>
+  <select name="select_S5C5" id="select_S5C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C6">MT210:</label>
+  <select name="select_S5C6" id="select_S5C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C7">MT211:</label>
+  <select name="select_S5C7" id="select_S5C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C8">CS238:</label>
+  <select name="select_S5C8" id="select_S5C8">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C9">OEC:</label>
+  <select name="select_S5C9" id="select_S5C9">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S5C10">H/M:</label>
+  <select name="select_S5C10" id="select_S5C10">
+    <option value=-1 selected="selected">nope</option>
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem5()">Calculate</button>
+
+<p id="gpa5"></p>
+
+  
+<form id="Sem6">  
+    
+  <label for="select_S6C1">CS239:</label>
+  <select name="select_S6C1" id="select_S6C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C2">OEC:</label>
+  <select name="select_S6C2" id="select_S6C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C3">HS202:</label>
+  <select name="select_S6C3" id="select_S6C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C4">MT212:</label>
+  <select name="select_S6C4" id="select_S6C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C5">MT213:</label>
+  <select name="select_S6C5" id="select_S6C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C6">MT214:</label>
+  <select name="select_S6C6" id="select_S6C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C7">MTY07:</label>
+  <select name="select_S6C7" id="select_S6C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C8">MT215:</label>
+  <select name="select_S6C8" id="select_S6C8">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C9">MT216:</label>
+  <select name="select_S6C9" id="select_S6C9">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C10">H/M:</label>
+  <select name="select_S6C10" id="select_S6C10">
+    <option value=-1 selected="selected">nope</option>
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem6()">Calculate</button>
+
+<p id="gpa6"></p>
+
+<button onclick="cgpaCal()">Calculate CGPA</button>
+
+<p id="cgpa"></p>
+
+<p class="styled-paragraph">by joseph beniel │ 
+  <a class="yt" href="https://www.youtube.com/@josephbeniel">yt</a> 
+  <a class="ig" href="https://www.instagram.com/the.morning.moon">ig</a> 
+  <a class="x" href="https://x.com/josephbeniel">X</a>
+</p>
+
+<script>  
+    const cred_sem1=[
+        3,
+        1.5,
+        4,
+        1.5,
+        4,
+        3,
+    ]
+
+    const cred_sem2=[
+      4,
+      1.5,
+      3,
+      4,
+      1.5,
+      4,
+      1.5
+    ]
+
+    const cred_sem3=[
+      3,
+      3,
+      3,
+      3,
+      4,
+      1.5,
+      1.5,
+      1.5,
+      4
+    ]
+
+    const cred_sem4=[
+      1.5,
+      2,
+      1.5,
+      3,
+      1.5,
+      1.5,
+      3,
+      4,
+      3,
+      4
+    ]
+
+    const cred_sem5=[
+      4,
+      3,
+      3,
+      3,
+      3,
+      1.5,
+      1.5,
+      1.5,
+      3,
+      4
+    ]
+    
+    const cred_sem6=[
+      1.5,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      1.5,
+      1.5,
+      4
+    ]
+    
+  var sem1G = null;
+  var sem2G = null;
+  var sem3G = null;
+  var sem4G = null;
+  var sem5G = null;  
+  var sem6G = null;
+
+  var sem1C = null;
+  var sem2C = null;
+  var sem3C = null;
+  var sem4C = null;
+  var sem5C = null;
+  var sem6C = null;
+  
+function sem1() {
+  var x = document.getElementById("Sem1");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    num += x.elements[i].value*cred_sem1[i];
+    den += cred_sem1[i];
+  }
+  sem1G=num/den;
+  sem1C=den;
+  document.getElementById("gpa1").innerHTML = "GPA = " + sem1G;
+}
+
+function sem2() {
+  var x = document.getElementById("Sem2");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    num += x.elements[i].value*cred_sem2[i];
+    den += cred_sem2[i];
+  }
+  sem2G=num/den;
+  sem2C=den;
+  document.getElementById("gpa2").innerHTML = "GPA = " + sem2G;
+}
+
+function sem3() {
+  var x = document.getElementById("Sem3");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      continue;
+    }
+    num += x.elements[i].value*cred_sem3[i];
+    den += cred_sem3[i];
+  }
+  sem3G=num/den;
+  sem3C=den;
+  document.getElementById("gpa3").innerHTML = "GPA = " + sem3G;
+}
+
+function sem4() {
+  var x = document.getElementById("Sem4");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      continue;
+    }
+    num += x.elements[i].value*cred_sem4[i];
+    den += cred_sem4[i];
+  }
+  sem4G=num/den;
+  sem4C=den;
+  document.getElementById("gpa4").innerHTML = "GPA = " + sem4G;
+}
+
+function sem5() {
+  var x = document.getElementById("Sem5");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      continue;
+    }
+    num += x.elements[i].value*cred_sem5[i];
+    den += cred_sem5[i];
+  }
+  sem5G=num/den;
+  sem5C=den;
+  document.getElementById("gpa5").innerHTML = "GPA = " + sem5G;
+}
+  
+function sem6() {
+  var x = document.getElementById("Sem6");
+  var text = "";
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      continue;
+    }
+    num += x.elements[i].value*cred_sem6[i];
+    den += cred_sem6[i];
+  }
+  sem6G=num/den;
+  sem6C=den;
+  document.getElementById("gpa6").innerHTML = "GPA = " + sem6G;
+}
+
+function cgpaCal(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
+      den = sem3C+sem4C+sem5C+sem6C;
+      document.getElementById("cgpa").innerHTML = "CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
+      den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C;
+      document.getElementById("cgpa").innerHTML = "CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa").innerHTML = " Calculate other GPAs ";
+    }
+  }
+  
+  
+}
+</script>
+
+</body>
+</html>
