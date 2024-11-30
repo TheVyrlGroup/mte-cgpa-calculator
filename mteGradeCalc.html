@@ -124,6 +124,10 @@
   
 <p id="gpa1"></p>
 
+<button onclick="cgpaCal1()">Calculate CGPA</button>
+
+<p id="cgpa1"></p>
+
 <form id="Sem2">  
     
   <label for="select_S2C1">CY201:</label>
@@ -209,6 +213,10 @@
 <button onclick="sem2()">Calculate</button>
 
 <p id="gpa2"></p>
+
+<button onclick="cgpaCal2()">Calculate CGPA</button>
+
+<p id="cgpa2"></p>
 
 <form id="Sem3">  
     
@@ -319,6 +327,10 @@
 <button onclick="sem3()">Calculate</button>
 
 <p id="gpa3"></p>
+
+<button onclick="cgpaCal3()">Calculate CGPA</button>
+
+<p id="cgpa3"></p>
 
 <form id="Sem4">  
     
@@ -439,6 +451,10 @@
 
 <p id="gpa4"></p>
 
+<button onclick="cgpaCal4()">Calculate CGPA</button>
+
+<p id="cgpa4"></p>
+
 <form id="Sem5">  
     
   <label for="select_S5C1">MT208:</label>
@@ -558,6 +574,9 @@
 
 <p id="gpa5"></p>
 
+<button onclick="cgpaCal5()">Calculate CGPA</button>
+
+<p id="cgpa5"></p>
   
 <form id="Sem6">  
     
@@ -891,8 +910,118 @@ function cgpaCal(){
       document.getElementById("cgpa").innerHTML = " Calculate other GPAs ";
     }
   }
+
+}
+
+function cgpaCal1(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    document.getElementById("cgpa1").innerHTML = "Aren't you a lateral student?";
+  } else {
+    if(sem1C!=null){
+      num = (sem1G*sem1C);
+      den = sem1C;
+      document.getElementById("cgpa1").innerHTML = "1st Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa1").innerHTML = " Calculate 1st Sem GPA ";
+    }
+  }
   
+}
+
+function cgpaCal2(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {  
+    document.getElementById("cgpa2").innerHTML = "Bro, you're a lateral student";
+  } else {
+    if(sem1C!=null & sem2C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C);
+      den = sem1C+sem2C;
+      document.getElementById("cgpa2").innerHTML = "2nd Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa2").innerHTML = " Calculate other GPAs ";
+    }
+  }
   
+}
+
+function cgpaCal3(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null){
+      num = (sem3G*sem3C);
+      den = sem3C;
+      document.getElementById("cgpa3").innerHTML = "3rd Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa3").innerHTML = " Calculate 3rd Sem GPA ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C);
+      den = sem1C+sem2C+sem3C;
+      document.getElementById("cgpa3").innerHTML = "3rd Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa3").innerHTML = " Calculate other GPAs ";
+    }
+  }
+  
+}
+
+function cgpaCal4(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C);
+      den = sem3C+sem4C;
+      document.getElementById("cgpa4").innerHTML = "4th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa4").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C);
+      den = sem1C+sem2C+sem3C+sem4C;
+      document.getElementById("cgpa4").innerHTML = "4th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa4").innerHTML = " Calculate other GPAs ";
+    }
+  }
+
+}
+
+function cgpaCal5(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null & sem5C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C);
+      den = sem3C+sem4C+sem5C;
+      document.getElementById("cgpa5").innerHTML = "5th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa5").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null & sem5C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C);
+      den = sem1C+sem2C+sem3C+sem4C+sem5C;
+      document.getElementById("cgpa5").innerHTML = "5th Sem CGPA = " + num/den;
+    }
+    else{
+      document.getElementById("cgpa5").innerHTML = " Calculate other GPAs ";
+    }
+  }
+
 }
 </script>
 
