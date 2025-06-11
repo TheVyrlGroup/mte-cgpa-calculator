@@ -46,9 +46,21 @@
       </style>
   </head>
 <body>
-  
-<input type="radio" name="reglat" id="reg" value="reg" checked>Regular
-<input type="radio" name="reglat" id="lat" value="lat">Lateral<br><br>  
+
+<form>
+  <input type="radio" name="reglat" id="reg" value="reg" checked>Regular
+  <input type="radio" name="reglat" id="lat" value="lat">Lateral<br><br>  
+</form>
+
+<h2>ENTER GRADES:</h2>
+
+<form id="inputGradesForm">  
+    
+  <textarea type="text" placeholder="10 10 10 10 10 X ..." name="grade_in" id="input_grades"></textarea>
+ 
+</form> 
+
+<button onclick="inputGrades()">Calculate</button>
 
 <h2>SEMESTER 1:</h2>
 
@@ -713,6 +725,111 @@
 
 <p id="cgpa6"></p>
 
+<h2>SEMESTER 7:</h2>
+
+<form id="Sem7">  
+    
+  <label for="select_S7C1">MT217:</label>
+  <select name="select_S7C1" id="select_S7C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C2">MT218:</label>
+  <select name="select_S7C2" id="select_S7C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C3">MTY14:</label>
+  <select name="select_S7C3" id="select_S7C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C4">MTY15:</label>
+  <select name="select_S7C4" id="select_S7C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C5">MT219:</label>
+  <select name="select_S7C5" id="select_S7C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C6">MT220:</label>
+  <select name="select_S7C6" id="select_S7C6">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C7">MT223:</label>
+  <select name="select_S7C7" id="select_S7C7">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S7C8">H/M:</label>
+  <select name="select_S7C8" id="select_S7C8">
+    <option value=-1 selected="selected">nope</option>
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem7()">Calculate</button>
+
+<button onclick="cgpaCal7()">Calculate CGPA</button>
+
+<p id="gpa7"></p>
+
+<p id="cgpa7"></p>
+
+<p id="save_text"></p>
+
 <p class="styled-paragraph">by joseph beniel │ 
   <a class="yt" href="https://www.youtube.com/@josephbeniel">yt</a> 
   <a class="ig" href="https://www.instagram.com/the.morning.moon">ig</a> 
@@ -789,13 +906,25 @@
       1.5,
       4
     ]
+
+    const cred_sem7=[
+      4,
+      3,
+      3,
+      3,
+      1.5,
+      1.5,
+      2,
+      4
+    ]
     
   var sem1G = null;
   var sem2G = null;
   var sem3G = null;
   var sem4G = null;
-  var sem5G = null;  
+  var sem5G = null;
   var sem6G = null;
+  var sem7G = null;
 
   var sem1C = null;
   var sem2C = null;
@@ -803,13 +932,177 @@
   var sem4C = null;
   var sem5C = null;
   var sem6C = null;
+  var sem7C = null;
+
+  var sem1_data = null;
+  var sem2_data = null;
+  var sem3_data = null;
+  var sem4_data = null;
+  var sem5_data = null;  
+  var sem6_data = null;
+  var sem7_data = null;
   
+  var text_sem1 = "";
+  var text_sem2 = "";
+  var text_sem3 = "";
+  var text_sem4 = "";
+  var text_sem5 = "";
+  var text_sem6 = "";
+  var text_sem7 = "";
+
+
+function inputGrades() {
+  var text = document.getElementById("input_grades").value;
+  const gradeArray = text.split(" ");
+  console.log(gradeArray);
+
+  j = 0;
+
+  if(document.getElementById('lat').checked == true) {
+    
+    x = document.getElementById("Sem3");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem3();
+
+    x = document.getElementById("Sem4");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem4();
+
+    x = document.getElementById("Sem5");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem5();
+
+    x = document.getElementById("Sem6");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem6();
+
+    x = document.getElementById("Sem7");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem7();s
+
+  } else {
+    var x = document.getElementById("Sem1");
+    for (i = 0; i < x.length ;i++) {
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem1();
+
+    x = document.getElementById("Sem2");
+    for (i = 0; i < x.length ;i++) {
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem2();
+    
+    x = document.getElementById("Sem3");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        j+=1;
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem3();
+
+    x = document.getElementById("Sem4");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        j+=1;
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem4();
+
+    x = document.getElementById("Sem5");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        j+=1;
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem5();
+
+    x = document.getElementById("Sem6");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        j+=1;
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem6();
+
+    x = document.getElementById("Sem7");
+    for (i = 0; i < x.length ;i++) {
+      if (gradeArray[j]=="X") {
+        j+=1;
+        continue;
+      }
+      x.elements[i].value = parseInt(gradeArray[j]);
+      j+=1;
+    }
+
+    sem7();
+  }
+
+}
+
 function sem1() {
+  text_sem1 = "";
   var x = document.getElementById("Sem1");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
+    text_sem1+= x.elements[i].value.toString();
+    text_sem1+= " ";
     num += x.elements[i].value*cred_sem1[i];
     den += cred_sem1[i];
   }
@@ -819,11 +1112,13 @@ function sem1() {
 }
 
 function sem2() {
+  text_sem2 = "";
   var x = document.getElementById("Sem2");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
+    text_sem2+= x.elements[i].value.toString();
+    text_sem2+= " ";
     num += x.elements[i].value*cred_sem2[i];
     den += cred_sem2[i];
   }
@@ -833,14 +1128,17 @@ function sem2() {
 }
 
 function sem3() {
+  text_sem3 = "";
   var x = document.getElementById("Sem3");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
     if(x.elements[i].value==-1) {
+      text_sem3+= "X ";
       continue;
     }
+    text_sem3+= x.elements[i].value.toString();
+    text_sem3+= " ";
     num += x.elements[i].value*cred_sem3[i];
     den += cred_sem3[i];
   }
@@ -850,14 +1148,17 @@ function sem3() {
 }
 
 function sem4() {
+  text_sem4 = "";
   var x = document.getElementById("Sem4");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
     if(x.elements[i].value==-1) {
+      text_sem4+= "X ";
       continue;
     }
+    text_sem4+= x.elements[i].value.toString();
+    text_sem4+= " ";
     num += x.elements[i].value*cred_sem4[i];
     den += cred_sem4[i];
   }
@@ -867,14 +1168,17 @@ function sem4() {
 }
 
 function sem5() {
+  text_sem5 = "";
   var x = document.getElementById("Sem5");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
     if(x.elements[i].value==-1) {
+      text_sem5+= "X ";
       continue;
     }
+    text_sem5+= x.elements[i].value.toString();
+    text_sem5+= " ";
     num += x.elements[i].value*cred_sem5[i];
     den += cred_sem5[i];
   }
@@ -884,20 +1188,43 @@ function sem5() {
 }
   
 function sem6() {
+  text_sem6 = "";
   var x = document.getElementById("Sem6");
-  var text = "";
   var den = 0,num = 0;
   var i;
   for (i = 0; i < x.length ;i++) {
     if(x.elements[i].value==-1) {
+      text_sem6+= "X ";
       continue;
     }
+    text_sem6+= x.elements[i].value.toString();
+    text_sem6+= " ";
     num += x.elements[i].value*cred_sem6[i];
     den += cred_sem6[i];
   }
   sem6G=num/den;
   sem6C=den;
   document.getElementById("gpa6").innerHTML = "GPA = " + sem6G;
+}
+
+function sem7() {
+  text_sem7 = "";
+  var x = document.getElementById("Sem7");
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      text_sem7+= "X ";
+      continue;
+    }
+    text_sem7+= x.elements[i].value.toString();
+    text_sem7+= " ";
+    num += x.elements[i].value*cred_sem7[i];
+    den += cred_sem7[i];
+  }
+  sem7G=num/den;
+  sem7C=den;
+  document.getElementById("gpa7").innerHTML = "GPA = " + sem7G;
 }
 
 function cgpaCal(){
@@ -1060,6 +1387,40 @@ function cgpaCal6(){
   }
 
 }
+
+function cgpaCal7(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null & sem7C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C)+(sem7G*sem7C);
+      den = sem3C+sem4C+sem5C+sem6C+sem7C;
+      document.getElementById("cgpa7").innerHTML = "7th Sem CGPA = " + num/den;
+      gradeText = text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7;
+      document.getElementById("save_text").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Copied text: " + gradeText);
+    }
+    else{
+      document.getElementById("cgpa7").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null & sem7C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C)+(sem7G*sem7C);
+      den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C+sem7C;
+      document.getElementById("cgpa7").innerHTML = "7th Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7;
+      document.getElementById("save_text").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Copied text: " + gradeText);
+    }
+    else{
+      document.getElementById("cgpa7").innerHTML = " Calculate other GPAs ";
+    }
+  }
+
+}
+
 </script>
 
 </body>
