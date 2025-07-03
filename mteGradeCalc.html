@@ -142,6 +142,8 @@
 
 <p id="cgpa1"></p>
 
+<p id="save_text1"></p>
+
 <h2>SEMESTER 2:</h2>
 
 <form id="Sem2">  
@@ -233,6 +235,8 @@
 <p id="gpa2"></p>
 
 <p id="cgpa2"></p>
+
+<p id="save_text2"></p>
 
 <h2>SEMESTER 3:</h2>
 
@@ -349,6 +353,8 @@
 <p id="gpa3"></p>
 
 <p id="cgpa3"></p>
+
+<p id="save_text3"></p>
 
 <h2>SEMESTER 4:</h2>
 
@@ -475,6 +481,8 @@
 
 <p id="cgpa4"></p>
 
+<p id="save_text4"></p>
+
 <h2>SEMESTER 5:</h2>
 
 <form id="Sem5">  
@@ -600,6 +608,8 @@
 
 <p id="cgpa5"></p>
 
+<p id="save_text5"></p>
+
 <h2>SEMESTER 6:</h2>
 
 <form id="Sem6">  
@@ -703,8 +713,19 @@
     <option value=0>F</option>
   </select>
 
-  <label for="select_S6C10">H/M:</label>
+  <label for="select_S6C10">MT222 (EDP):</label>
   <select name="select_S6C10" id="select_S6C10">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S6C11">H/M:</label>
+  <select name="select_S6C11" id="select_S6C11">
     <option value=-1 selected="selected">nope</option>
     <option value=10>S</option>
     <option value=9>A</option>
@@ -724,6 +745,8 @@
 <p id="gpa6"></p>
 
 <p id="cgpa6"></p>
+
+<p id="save_text6"></p>
 
 <h2>SEMESTER 7:</h2>
 
@@ -828,7 +851,80 @@
 
 <p id="cgpa7"></p>
 
-<p id="save_text"></p>
+<p id="save_text7"></p>
+
+<h2>SEMESTER 8:</h2>
+
+<form id="Sem8">  
+    
+  <label for="select_S8C1">MT225:</label>
+  <select name="select_S8C1" id="select_S8C1">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S8C2">MT226:</label>
+  <select name="select_S8C2" id="select_S8C2">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S8C3">MT227:</label>
+  <select name="select_S8C3" id="select_S8C3">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S8C4">NPTEL-1:</label>
+  <select name="select_S8C4" id="select_S8C4">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+  <label for="select_S8C5">NPTEL-2:</label>
+  <select name="select_S8C5" id="select_S8C5">
+    <option value=10>S</option>
+    <option value=9>A</option>
+    <option value=8>B</option>
+    <option value=7>C</option>
+    <option value=6>D</option>
+    <option value=5>E</option>
+    <option value=0>F</option>
+  </select>
+
+</form> 
+
+<button onclick="sem8()">Calculate</button>
+
+<button onclick="cgpaCal8()">Calculate CGPA</button>
+
+<p id="gpa8"></p>
+
+<p id="cgpa8"></p>
+
+<p id="save_text8"></p>
+
+<p id="passed"></p>
 
 <p class="styled-paragraph">by joseph beniel │ 
   <a class="yt" href="https://www.youtube.com/@josephbeniel">yt</a> 
@@ -904,6 +1000,7 @@
       3,
       1.5,
       1.5,
+      2,
       4
     ]
 
@@ -917,6 +1014,14 @@
       2,
       4
     ]
+
+    const cred_sem8=[
+      1,
+      2,
+      8,
+      2,
+      2
+    ]
     
   var sem1G = null;
   var sem2G = null;
@@ -925,6 +1030,7 @@
   var sem5G = null;
   var sem6G = null;
   var sem7G = null;
+  var sem8G = null;
 
   var sem1C = null;
   var sem2C = null;
@@ -933,6 +1039,7 @@
   var sem5C = null;
   var sem6C = null;
   var sem7C = null;
+  var sem8C = null;
 
   var sem1_data = null;
   var sem2_data = null;
@@ -941,6 +1048,7 @@
   var sem5_data = null;  
   var sem6_data = null;
   var sem7_data = null;
+  var sem8_data = null;
   
   var text_sem1 = "";
   var text_sem2 = "";
@@ -949,74 +1057,131 @@
   var text_sem5 = "";
   var text_sem6 = "";
   var text_sem7 = "";
+  var text_sem8 = "";
 
 
 function inputGrades() {
   var text = document.getElementById("input_grades").value;
+  text = text.trimStart();
   const gradeArray = text.split(" ");
   console.log(gradeArray);
-
+  var x;
   j = 0;
 
+  /* For those who have the grades without EDP added - Updated 3 Jul 2025*/
+  if (gradeArray.length == 48) {
+    gradeArray.splice(49, 0, "X");
+    alert("Please update your EDP Grade in Semester 6!");
+  }
+  
+  if (gradeArray.length == 60) {
+    gradeArray.splice(51, 0, "X");
+    alert("Please update your EDP Grade in Semester 6!");
+  }
+
+  
+  /* Lateral Student Input Grades */
   if(document.getElementById('lat').checked == true) {
     
     x = document.getElementById("Sem3");
     for (i = 0; i < x.length ;i++) {
       if (gradeArray[j]=="X") {
+        j+=1
         continue;
       }
       x.elements[i].value = parseInt(gradeArray[j]);
       j+=1;
     }
-
+    
     sem3();
 
-    x = document.getElementById("Sem4");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        continue;
+    if (gradeArray.length>9) {
+
+      x = document.getElementById("Sem4");
+      for (i = 0; i < x.length ;i++) {
+        if (gradeArray[j]=="X") {
+          j+=1
+          continue;
+        }
+        x.elements[i].value = parseInt(gradeArray[j]);
+        j+=1;
       }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
+
+      sem4();
+
+      if (gradeArray.length>19) {
+        
+        x = document.getElementById("Sem5");
+        for (i = 0; i < x.length ;i++) {
+          if (gradeArray[j]=="X") {
+            j+=1
+            continue;
+          }
+          x.elements[i].value = parseInt(gradeArray[j]);
+          j+=1;
+        }
+
+        sem5();
+       
+        if (gradeArray.length>29) {
+
+          x = document.getElementById("Sem6");
+          for (i = 0; i < x.length ;i++) {
+            if (gradeArray[j]=="X") {
+              j+=1;
+              continue;
+            }
+            x.elements[i].value = parseInt(gradeArray[j]);
+            j+=1;
+          }
+
+          sem6();
+        
+          if (gradeArray.length>40) {
+            
+            x = document.getElementById("Sem7");
+            for (i = 0; i < x.length ;i++) {
+              if (gradeArray[j]=="X") {
+                j+=1;
+                continue;
+              }
+              x.elements[i].value = parseInt(gradeArray[j]);
+              j+=1;
+            }
+
+            sem7();
+
+            if (gradeArray.length>48) {
+
+              x = document.getElementById("Sem8");
+                  for (i = 0; i < x.length ;i++) {
+                    if (gradeArray[j]=="X") {
+                      j+=1;
+                      continue;
+                    }
+                    x.elements[i].value = parseInt(gradeArray[j]);
+                    j+=1;
+                  }
+
+                  sem8();
+
+            }
+          }
+        }
+      }
     }
 
-    sem4();
 
-    x = document.getElementById("Sem5");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
 
-    sem5();
 
-    x = document.getElementById("Sem6");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
+   
 
-    sem6();
-
-    x = document.getElementById("Sem7");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
-
-    sem7();s
-
-  } else {
-    var x = document.getElementById("Sem1");
+  }
+  
+  /* Regular Student Input Grades */
+  else {
+    
+    x = document.getElementById("Sem1");
     for (i = 0; i < x.length ;i++) {
       x.elements[i].value = parseInt(gradeArray[j]);
       j+=1;
@@ -1024,75 +1189,111 @@ function inputGrades() {
 
     sem1();
 
-    x = document.getElementById("Sem2");
-    for (i = 0; i < x.length ;i++) {
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
+    if (gradeArray.length>6) {
 
-    sem2();
+      x = document.getElementById("Sem2");
+      for (i = 0; i < x.length ;i++) {
+        if (j>=gradeArray.length) {
+          break;
+        }
+        x.elements[i].value = parseInt(gradeArray[j]);
+        j+=1;
+      }
+
+      sem2();
+      
+      if (gradeArray.length>13) {
+        
+        x = document.getElementById("Sem3");
+        for (i = 0; i < x.length ;i++) {
+          if (gradeArray[j]=="X") {
+            j+=1;
+            continue;
+          }
+          x.elements[i].value = parseInt(gradeArray[j]);
+          j+=1;
+        }
+
+        sem3();
+
+        if (gradeArray.length>22) {
+
+          x = document.getElementById("Sem4");
+          for (i = 0; i < x.length ;i++) {
+            if (gradeArray[j]=="X") {
+              j+=1;
+              continue;
+            }
+            x.elements[i].value = parseInt(gradeArray[j]);
+            j+=1;
+          }
+
+          sem4();
+
+          if (gradeArray.length>32) {
+
+            x = document.getElementById("Sem5");
+            for (i = 0; i < x.length ;i++) {
+              if (gradeArray[j]=="X") {
+                j+=1;
+                continue;
+              }
+              x.elements[i].value = parseInt(gradeArray[j]);
+              j+=1;
+            }
+
+            sem5();
+
+            if (gradeArray.length>42) {
+
+              x = document.getElementById("Sem6");
+              for (i = 0; i < x.length ;i++) {
+                if (gradeArray[j]=="X") {
+                  j+=1;
+                  continue;
+                }
+                x.elements[i].value = parseInt(gradeArray[j]);
+                j+=1;
+              }
+
+              sem6();
+
+              if (gradeArray.length>53) {
     
-    x = document.getElementById("Sem3");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        j+=1;
-        continue;
+                x = document.getElementById("Sem7");
+                for (i = 0; i < x.length ;i++) {
+                  if (gradeArray[j]=="X") {
+                    j+=1;
+                    continue;
+                  }
+                  x.elements[i].value = parseInt(gradeArray[j]);
+                  j+=1;
+                }
+
+                sem7();
+
+                if (gradeArray.length>61) {
+
+                  x = document.getElementById("Sem8");
+                  for (i = 0; i < x.length ;i++) {
+                    if (gradeArray[j]=="X") {
+                      j+=1;
+                      continue;
+                    }
+                    x.elements[i].value = parseInt(gradeArray[j]);
+                    j+=1;
+                  }
+
+                  sem8();
+                  
+                }
+              }
+            }
+          }
+        }
       }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
     }
-
-    sem3();
-
-    x = document.getElementById("Sem4");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        j+=1;
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
-
-    sem4();
-
-    x = document.getElementById("Sem5");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        j+=1;
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
-
-    sem5();
-
-    x = document.getElementById("Sem6");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        j+=1;
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
-
-    sem6();
-
-    x = document.getElementById("Sem7");
-    for (i = 0; i < x.length ;i++) {
-      if (gradeArray[j]=="X") {
-        j+=1;
-        continue;
-      }
-      x.elements[i].value = parseInt(gradeArray[j]);
-      j+=1;
-    }
-
-    sem7();
   }
-
 }
 
 function sem1() {
@@ -1227,6 +1428,26 @@ function sem7() {
   document.getElementById("gpa7").innerHTML = "GPA = " + sem7G;
 }
 
+function sem8() {
+  text_sem8 = "";
+  var x = document.getElementById("Sem8");
+  var den = 0,num = 0;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    if(x.elements[i].value==-1) {
+      text_sem8+= "X ";
+      continue;
+    }
+    text_sem8+= x.elements[i].value.toString();
+    text_sem8+= " ";
+    num += x.elements[i].value*cred_sem8[i];
+    den += cred_sem8[i];
+  }
+  sem8G=num/den;
+  sem8C=den;
+  document.getElementById("gpa8").innerHTML = "GPA = " + sem8G;
+}
+
 function cgpaCal(){
   var den = 0,num = 0;
   var i;
@@ -1262,6 +1483,10 @@ function cgpaCal1(){
       num = (sem1G*sem1C);
       den = sem1C;
       document.getElementById("cgpa1").innerHTML = "1st Sem CGPA = " + num/den;
+      gradeText = text_sem1;
+      document.getElementById("save_text1").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa1").innerHTML = " Calculate 1st Sem GPA ";
@@ -1280,6 +1505,10 @@ function cgpaCal2(){
       num = (sem1G*sem1C)+(sem2G*sem2C);
       den = sem1C+sem2C;
       document.getElementById("cgpa2").innerHTML = "2nd Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2;
+      document.getElementById("save_text2").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa2").innerHTML = " Calculate other GPAs ";
@@ -1296,6 +1525,10 @@ function cgpaCal3(){
       num = (sem3G*sem3C);
       den = sem3C;
       document.getElementById("cgpa3").innerHTML = "3rd Sem CGPA = " + num/den;
+      gradeText = text_sem3;
+      document.getElementById("save_text3").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa3").innerHTML = " Calculate 3rd Sem GPA ";
@@ -1305,6 +1538,10 @@ function cgpaCal3(){
       num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C);
       den = sem1C+sem2C+sem3C;
       document.getElementById("cgpa3").innerHTML = "3rd Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3;
+      document.getElementById("save_text3").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa3").innerHTML = " Calculate other GPAs ";
@@ -1321,6 +1558,10 @@ function cgpaCal4(){
       num = (sem3G*sem3C)+(sem4G*sem4C);
       den = sem3C+sem4C;
       document.getElementById("cgpa4").innerHTML = "4th Sem CGPA = " + num/den;
+      gradeText = text_sem3 + text_sem4;
+      document.getElementById("save_text4").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa4").innerHTML = " Calculate other GPAs ";
@@ -1330,6 +1571,10 @@ function cgpaCal4(){
       num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C);
       den = sem1C+sem2C+sem3C+sem4C;
       document.getElementById("cgpa4").innerHTML = "4th Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4;
+      document.getElementById("save_text4").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa4").innerHTML = " Calculate other GPAs ";
@@ -1346,6 +1591,10 @@ function cgpaCal5(){
       num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C);
       den = sem3C+sem4C+sem5C;
       document.getElementById("cgpa5").innerHTML = "5th Sem CGPA = " + num/den;
+      gradeText = text_sem3 + text_sem4 + text_sem5;
+      document.getElementById("save_text5").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa5").innerHTML = " Calculate other GPAs ";
@@ -1355,6 +1604,10 @@ function cgpaCal5(){
       num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C);
       den = sem1C+sem2C+sem3C+sem4C+sem5C;
       document.getElementById("cgpa5").innerHTML = "5th Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4 + text_sem5;
+      document.getElementById("save_text5").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa5").innerHTML = " Calculate other GPAs ";
@@ -1371,6 +1624,10 @@ function cgpaCal6(){
       num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
       den = sem3C+sem4C+sem5C+sem6C;
       document.getElementById("cgpa6").innerHTML = "6th Sem CGPA = " + num/den;
+      gradeText = text_sem3 + text_sem4 + text_sem5 + text_sem6;
+      document.getElementById("save_text6").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa6").innerHTML = " Calculate other GPAs ";
@@ -1380,6 +1637,10 @@ function cgpaCal6(){
       num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C);
       den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C;
       document.getElementById("cgpa6").innerHTML = "6th Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4 + text_sem5 + text_sem6;
+      document.getElementById("save_text6").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa6").innerHTML = " Calculate other GPAs ";
@@ -1397,9 +1658,9 @@ function cgpaCal7(){
       den = sem3C+sem4C+sem5C+sem6C+sem7C;
       document.getElementById("cgpa7").innerHTML = "7th Sem CGPA = " + num/den;
       gradeText = text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7;
-      document.getElementById("save_text").innerHTML = "Save for later - " + gradeText;
+      document.getElementById("save_text7").innerHTML = "Save for later - " + gradeText;
       navigator.clipboard.writeText(gradeText);
-      alert("Copied text: " + gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa7").innerHTML = " Calculate other GPAs ";
@@ -1410,12 +1671,47 @@ function cgpaCal7(){
       den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C+sem7C;
       document.getElementById("cgpa7").innerHTML = "7th Sem CGPA = " + num/den;
       gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7;
-      document.getElementById("save_text").innerHTML = "Save for later - " + gradeText;
+      document.getElementById("save_text7").innerHTML = "Save for later - " + gradeText;
       navigator.clipboard.writeText(gradeText);
-      alert("Copied text: " + gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
     }
     else{
       document.getElementById("cgpa7").innerHTML = " Calculate other GPAs ";
+    }
+  }
+
+}
+
+function cgpaCal8(){
+  var den = 0,num = 0;
+  var i;
+  if(document.getElementById('lat').checked == true) {   
+    if(sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null & sem7C!=null & sem8C!=null){
+      num = (sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C)+(sem7G*sem7C)+(sem8G*sem8C);
+      den = sem3C+sem4C+sem5C+sem6C+sem7C+sem8C;
+      document.getElementById("cgpa8").innerHTML = "8th Sem CGPA = " + num/den;
+      gradeText = text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7 + text_sem8;
+      document.getElementById("save_text8").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
+      document.getElementById("passed").innerHTML = "Congratulations on surviving B.Tech! Have a great life ahead, Mechatronics Engineer! <i><b>\"MRF na tyre uh, Mechatronics na Fire uh!\"</b></i>";
+    }
+    else{
+      document.getElementById("cgpa8").innerHTML = " Calculate other GPAs ";
+    }
+  } else {
+    if(sem1C!=null & sem2C!=null & sem3C!=null & sem4C!=null & sem5C!=null & sem6C!=null & sem7C!=null & sem8C!=null){
+      num = (sem1G*sem1C)+(sem2G*sem2C)+(sem3G*sem3C)+(sem4G*sem4C)+(sem5G*sem5C)+(sem6G*sem6C)+(sem7G*sem7C)+(sem8G*sem8C);
+      den = sem1C+sem2C+sem3C+sem4C+sem5C+sem6C+sem7C+sem8G;
+      document.getElementById("cgpa8").innerHTML = "8th Sem CGPA = " + num/den;
+      gradeText = text_sem1 + text_sem2 + text_sem3 + text_sem4 + text_sem5 + text_sem6 + text_sem7 + text_sem8;
+      document.getElementById("save_text8").innerHTML = "Save for later - " + gradeText;
+      navigator.clipboard.writeText(gradeText);
+      alert("Grades have been copied to your clipboard for later use!\nPaste somewhere to use it again.\nSuggestion: Text to yourself on Whatsapp/Telegram!");
+      document.getElementById("passed").innerHTML = "Congratulations on surviving B.Tech! Have a great life ahead, Mechatronics Engineer! <i><b>\"MRF na tyre uh, Mechatronics na Fire uh!\"</b></i>";
+    }
+    else{
+      document.getElementById("cgpa8").innerHTML = " Calculate other GPAs ";
     }
   }
 
